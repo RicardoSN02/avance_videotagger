@@ -1,0 +1,30 @@
+{
+    "name": "ConsultasDriveapi",
+    "version": "1.0",
+    "description": "usar api de drive para distintas consultas",
+    "manifest_version": 3,
+    "action": {
+      "default_title": "probar consultas con un boton",
+      "default_popup": "index.html"  
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjC9c62KOrtx5wYPoZL3OsrkORbcROe2Io9IgY5jXyIiG7Ty/WQst/XXfAlZ3XMJnfXkyGIaaMGyRzQBNki9PpFGkvVY1BqCQGo+Ig5meExedNnFXKU1x5Ut7Yo4VwWZlpfx5h9b12ywXWkd8snnfYzdSQqpIHuF6k0gaaUMP8Um4xNJCGHsGBm9/QI+gS6GLwNZFmI2l9uxCd+XI6h+g1cmWk01p0NfJv8a2RAUkCU0Qsin+OjqR3nTZCZ4a0zBXGCYk0yNtnDK7KzUGTwaP4gICpuU9TzFArs+fd236JykJoiwQ7+Vy3yMTuPM+T6nIBCz9ZnobM5I0z+GMZAMOawIDAQAB",
+    "oauth2": {
+       "client_id": "758095101585-u69sctgsf0l316i2ui7e2qkp3pj9j5b9.apps.googleusercontent.com",
+       "scopes":["https://www.googleapis.com/auth/drive.metadata.readonly"]
+    },
+    "permissions": [
+        "identity","activeTab","scripting","tabs"
+    ],
+    "content_scripts":[
+      {
+       "matches": [
+          "https://meet.google.com/*"
+        ],
+      "js": ["content.js"]
+      }
+    ]
+    
+ }
